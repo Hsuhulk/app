@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Product</title>
+	<link rel="stylesheet" href="css/product.themes.c.min.css" />
+    <link rel="stylesheet" href="css/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" href="css/product.css" />
+</head>
+<body>
+    <!-- 菜單頁 -->
+    <div data-role="page" id="menuPage">
+        <div data-role="header" data-position="fixed" data-theme="b">
+            <a href="#welcomePage" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left" data-theme="c" id="toHome1">Home</a>
+            <h1>This's menuPage</h1>
+            <a href="#infPage" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-notext"></a>
+        </div>
+
+        <div data-role="main" class="ui-content" data-theme="b">
+            <ol data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="請搜尋品名:" id="searchMenu" class="listview1">
+                <!-- 菜單產生區 -->
+            </ol>
+            <br />           
+        	<a href="#orderPage" class="ui-btn ui-btn-b ui-corner-all ui-btn-inline ui-mini footer-button-right ui-btn-icon-right ui-icon-carat-r" id="btnConfirm" data-transition="slideup">訂單確認</a>
+        </div>
+
+
+        <div data-role="popup" id="addPopup" class="ui-content" data-theme="c">
+            <label for="orderNumber">請輸入餐點數量:</label>
+            <input type="number" input type="number" name="orderNumber" id="orderNumber" value="1" data-clear-btn="true">
+            <div data-role="controlgroup" data-type="horizontal">
+		      <p>容量:</p>
+		      <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-icon-left">中杯</a>
+		      <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-icon-left">大杯</a>
+		    </div>
+            <div data-role="controlgroup" data-type="horizontal">
+		      <p>甜度:</p>
+		      <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-icon-left">正常</a>
+		      <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-icon-left">少糖</a>
+  		      <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-icon-left">半糖</a>
+		      <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-icon-left">微糖</a>
+  		      <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-icon-left">無糖</a>		      
+		    </div>
+            <div data-role="controlgroup" data-type="horizontal">
+		      <p>冰塊:</p>
+		      <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-icon-left">正常</a>
+		      <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-icon-left">少冰</a>
+  		      <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-icon-left">去冰</a>
+		      <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-icon-left">常溫</a>
+  		      <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-icon-left">溫</a>	
+		    </div>
+            <a href="#" class="ui-btn ui-corner-all ui-shadow ui-icon-check ui-btn-icon-left" data-rel="back" id="joinOrder">加入訂單</a>
+            <a href="#" class="ui-btn ui-corner-all ui-shadow ui-icon-back ui-btn-icon-left" data-rel="back" id="cancelOrder">取消點餐</a>
+        </div>
+
+        <div data-role="footer" data-position="fixed" id="menuFooter" data-theme="b">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#" data-icon="search" data-theme="c">首頁</a></li>
+                    <li><a href="#orderPage" data-icon="bullets" data-theme="b" data-transition="slide">產品資訊</a></li>
+                    <li><a href="" data-icon="clock" data-theme="b" data-transition="slide">店家資訊</a></li>
+                    <li><a href="" data-icon="bullets" data-theme="b" data-transition="slide">會員</a></li>
+                    <li><a href="" data-icon="clock" data-theme="b" data-transition="slide">APP設定</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- 菜單頁結束 -->
+    <!-- 訂單頁 -->
+    <div data-role="page" id="orderPage">
+        <div data-role="header" data-position="fixed" data-theme="b">
+            <a href="#welcomePage" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left" id="toHome2">Home</a>
+            <h1>This's orderPage</h1>
+            <a href="#infPage" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-notext"></a>
+        </div>
+        <div data-role="main" class="ui-content" id="orderContent">
+            <div id="set0">
+                <h3>您點選的訂單如下:</h3>
+            </div>
+            <!-- 訂單產生區 -->
+        </div>
+        <div data-role="footer" data-position="fixed" data-theme="b">
+            <a href="#" class="ui-btn ui-corner-all ui-btn-inline ui-mini footer-button-left ui-btn-icon-left ui-icon-refresh" id="btnClearOrder">清除訂單</a>
+            <a href="#confirmPopup" data-rel="popup" class="ui-btn ui-corner-all ui-btn-inline ui-mini footer-button-right ui-btn-icon-right ui-icon-carat-r" id="btnConfirmOrder" data-transition="slideup">訂單確認</a>
+			<div data-role="navbar">
+                <ul>
+                    <li><a href="#menuPage" data-icon="search" data-theme="b" data-transition="slide" data-direction="reverse">首頁</a></li>
+                    <li><a href="#" data-icon="bullets" data-theme="c">產品資訊</a></li>
+                    <li><a href="" data-icon="clock" data-theme="b" data-transition="slide">店家資訊</a></li>
+                    <li><a href="" data-icon="bullets" data-theme="b" data-transition="slide">會員</a></li>
+                    <li><a href="" data-icon="clock" data-theme="b" data-transition="slide">APP設定</a></li>
+                </ul>
+            </div>
+        </div>
+        <div data-role="popup" id="confirmPopup" class="ui-content" data-theme="c" data-dismissible="false">
+            <label for="orderNumber">還需要別的嗎?</label>
+            <a href="#workPage" class="ui-btn ui-corner-all ui-shadow ui-icon-check ui-btn-icon-left" id="btnCheckPay" data-transition="slide" data-theme="c">確認付款</a>
+            <a href="#" class="ui-btn ui-corner-all ui-shadow ui-icon-back ui-btn-icon-left" data-rel="back" id="btnCancelPay" data-theme="c">還想加點</a>
+        </div>
+
+    </div>
+    <!--訂單頁結束 -->
+    <script src="js/product.js"></script>
+</body>
+</html>
