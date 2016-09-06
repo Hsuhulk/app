@@ -1,9 +1,10 @@
 .footer-button-left,
 .footer-button-right {
-    position: absolute;
+    position: fixed;
     margin: 0;
     top: auto;
     bottom: 5em;
+    z-index: 5;
 }
 
 .footer-button-left {
@@ -12,4 +13,21 @@
 
 .footer-button-right {
     right: 0.4em;
+}
+.count-second {
+    right: 3em !important;
+}
+
+.count-third {
+    right: 5em !important;
+}
+
+
+/*shop.css*/
+#googleMap{
+	position: relative;
+	top: 5em;
+	left: 8%;
+	width:85%;
+	height:500px;
 }

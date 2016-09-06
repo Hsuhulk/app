@@ -1,70 +1,86 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Product</title>
-	<link rel="stylesheet" href="css/product.themes.c.min.css" />
+    <title>真心飲茶</title>
+    <link rel="stylesheet" href="css/eMenu.themes.c.min.css" />
+    <link rel="stylesheet" href="css/product.themes.c.min.css" />
     <link rel="stylesheet" href="css/jquery.mobile.icons.min.css" />
     <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
     <script src="js/jquery-1.11.1.min.js"></script>
     <script src="js/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" href="css/eMenu.css" />
     <link rel="stylesheet" href="css/product.css" />
+    <!-- <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDzWQYYtGASKg62h1h3eJ6iyUMYoOjYD9M"></script> -->
 </head>
-<body>
-    <!-- 菜單頁 -->
-    <div data-role="page" id="menuPage">
-        <div data-role="header" data-position="fixed" data-theme="b">
-            <a href="#welcomePage" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left" data-theme="c" id="toHome1">Home</a>
-            <h1>This's menuPage</h1>
-            <a href="#infPage" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-notext"></a>
-        </div>
 
+<body>
+    <!-- WelcomePage -->
+    <div data-role="page" id="welcomePage" data-theme="c">
+        <div data-role="content" style="text-align:center">
+            <a href="#enterPage"><img src="image/drink.png" width="100%" height="auto"></a>
+        </div>
+    </div>
+    <!--Home Page -->
+    <div data-role="page" id="enterPage">
+        <div data-role="footer" data-position="fixed" data-theme="a">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#enterPage" data-icon="search" data-theme="c">首頁</a></li>
+                    <li><a href="#product" data-icon="bullets" data-theme="b" data-transition="slide">產品資訊</a></li>
+                    <li><a href="#shop" data-icon="clock" data-theme="b" data-transition="slide">店家資訊</a></li>
+                    <li><a href="#member" data-icon="bullets" data-theme="b" data-transition="slide">會員</a></li>
+                    <li><a href="#issue" data-icon="clock" data-theme="b" data-transition="slide">問題回報</a></li>
+                </ul>
+            </div>
+        </div>
+        <div data-role="main" class="ui-content">
+            <div data-role="content">
+                <div data-role="collapsible" data-collapsed="false">
+                    <h1>最新優惠</h1>
+                    <p>即日起訂購200杯送皮卡丘抱枕喔~~!</p>
+                </div>
+                <div data-role="collapsible">
+                    <h1>最新消息</h1>
+                    <p><img style="width:350px" src="./image/action01.jpg"></p>
+                </div>
+            </div>
+            <div data-role="content">
+                <div data-role="collapsible">
+                    <h1>新品上市</h1>
+                    <p><img style="width:350px" src="./image/bg2.jpg"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 菜單頁 -->
+    <div data-role="page" id="product">
         <div data-role="main" class="ui-content" data-theme="b">
             <ol data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="請搜尋品名:" id="searchMenu" class="listview1">
                 <!-- 菜單產生區 -->
             </ol>
-            <br />           
-        	<a href="#orderPage" class="ui-btn ui-btn-b ui-corner-all ui-btn-inline ui-mini footer-button-right ui-btn-icon-right ui-icon-carat-r" id="btnConfirm" data-transition="slideup">訂單確認</a>
+            <br />
+            <a href="#orderPage" class="ui-btn ui-btn-b ui-corner-all ui-btn-inline ui-mini footer-button-right ui-btn-icon-right ui-icon-carat-r" id="btnConfirm" data-transition="slide">訂單確認</a>
         </div>
-
-
-        <div data-role="popup" id="addPopup" class="ui-content" data-theme="c">
+        <div data-role="popup" id="addPopup" class="ui-content" data-theme="a">
             <label for="orderNumber">請輸入餐點數量:</label>
             <input type="number" input type="number" name="orderNumber" id="orderNumber" value="1" data-clear-btn="true">
-            <div data-role="controlgroup" data-type="horizontal">
-		      <p>容量:</p>
-		      <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-icon-left">中杯</a>
-		      <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-icon-left">大杯</a>
-		    </div>
-            <div data-role="controlgroup" data-type="horizontal">
-		      <p>甜度:</p>
-		      <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-icon-left">正常</a>
-		      <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-icon-left">少糖</a>
-  		      <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-icon-left">半糖</a>
-		      <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-icon-left">微糖</a>
-  		      <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-icon-left">無糖</a>		      
-		    </div>
-            <div data-role="controlgroup" data-type="horizontal">
-		      <p>冰塊:</p>
-		      <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-icon-left">正常</a>
-		      <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-icon-left">少冰</a>
-  		      <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-icon-left">去冰</a>
-		      <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-icon-left">常溫</a>
-  		      <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-icon-left">溫</a>	
-		    </div>
-            <a href="#" class="ui-btn ui-corner-all ui-shadow ui-icon-check ui-btn-icon-left" data-rel="back" id="joinOrder">加入訂單</a>
-            <a href="#" class="ui-btn ui-corner-all ui-shadow ui-icon-back ui-btn-icon-left" data-rel="back" id="cancelOrder">取消點餐</a>
+            <div id="popCondition">
+                <!--選單條件產生區-->
+            </div>
+            <a href="#" class="ui-btn ui-btn-c ui-corner-all ui-shadow ui-icon-check ui-btn-icon-left" id="joinOrder">加入訂單</a>
+            <a href="#" class="ui-btn ui-btn-c ui-corner-all ui-shadow ui-icon-back ui-btn-icon-left" data-rel="back">取消點餐</a>
         </div>
-
         <div data-role="footer" data-position="fixed" id="menuFooter" data-theme="b">
             <div data-role="navbar">
                 <ul>
-                    <li><a href="#" data-icon="search" data-theme="c">首頁</a></li>
-                    <li><a href="#orderPage" data-icon="bullets" data-theme="b" data-transition="slide">產品資訊</a></li>
-                    <li><a href="" data-icon="clock" data-theme="b" data-transition="slide">店家資訊</a></li>
-                    <li><a href="" data-icon="bullets" data-theme="b" data-transition="slide">會員</a></li>
-                    <li><a href="" data-icon="clock" data-theme="b" data-transition="slide">APP設定</a></li>
+                    <li><a href="#enterPage" data-icon="search" data-theme="b">首頁</a></li>
+                    <li><a href="#product" data-icon="bullets" data-theme="c" data-transition="slide">產品資訊</a></li>
+                    <li><a href="#shop" data-icon="clock" data-theme="b" data-transition="slide">店家資訊</a></li>
+                    <li><a href="#member" data-icon="bullets" data-theme="b" data-transition="slide">會員</a></li>
+                    <li><a href="#issue" data-icon="clock" data-theme="b" data-transition="slide">問題回報</a></li>
                 </ul>
             </div>
         </div>
@@ -72,11 +88,6 @@
     <!-- 菜單頁結束 -->
     <!-- 訂單頁 -->
     <div data-role="page" id="orderPage">
-        <div data-role="header" data-position="fixed" data-theme="b">
-            <a href="#welcomePage" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left" id="toHome2">Home</a>
-            <h1>This's orderPage</h1>
-            <a href="#infPage" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-notext"></a>
-        </div>
         <div data-role="main" class="ui-content" id="orderContent">
             <div id="set0">
                 <h3>您點選的訂單如下:</h3>
@@ -84,15 +95,15 @@
             <!-- 訂單產生區 -->
         </div>
         <div data-role="footer" data-position="fixed" data-theme="b">
-            <a href="#" class="ui-btn ui-corner-all ui-btn-inline ui-mini footer-button-left ui-btn-icon-left ui-icon-refresh" id="btnClearOrder">清除訂單</a>
+            <a href="#product" class="ui-btn ui-corner-all ui-btn-inline ui-mini footer-button-left ui-btn-icon-left ui-icon-refresh" id="btnClearOrder">清除訂單</a>
             <a href="#confirmPopup" data-rel="popup" class="ui-btn ui-corner-all ui-btn-inline ui-mini footer-button-right ui-btn-icon-right ui-icon-carat-r" id="btnConfirmOrder" data-transition="slideup">訂單確認</a>
-			<div data-role="navbar">
+            <div data-role="navbar">
                 <ul>
-                    <li><a href="#menuPage" data-icon="search" data-theme="b" data-transition="slide" data-direction="reverse">首頁</a></li>
-                    <li><a href="#" data-icon="bullets" data-theme="c">產品資訊</a></li>
-                    <li><a href="" data-icon="clock" data-theme="b" data-transition="slide">店家資訊</a></li>
-                    <li><a href="" data-icon="bullets" data-theme="b" data-transition="slide">會員</a></li>
-                    <li><a href="" data-icon="clock" data-theme="b" data-transition="slide">APP設定</a></li>
+                    <li><a href="#enterPage" data-icon="search" data-theme="b">首頁</a></li>
+                    <li><a href="#product" data-icon="bullets" data-theme="c" data-transition="slide">產品資訊</a></li>
+                    <li><a href="#shop" data-icon="clock" data-theme="b" data-transition="slide">店家資訊</a></li>
+                    <li><a href="#member" data-icon="bullets" data-theme="b" data-transition="slide">會員</a></li>
+                    <li><a href="#issue" data-icon="clock" data-theme="b" data-transition="slide">問題回報</a></li>
                 </ul>
             </div>
         </div>
@@ -101,9 +112,190 @@
             <a href="#workPage" class="ui-btn ui-corner-all ui-shadow ui-icon-check ui-btn-icon-left" id="btnCheckPay" data-transition="slide" data-theme="c">確認付款</a>
             <a href="#" class="ui-btn ui-corner-all ui-shadow ui-icon-back ui-btn-icon-left" data-rel="back" id="btnCancelPay" data-theme="c">還想加點</a>
         </div>
-
     </div>
     <!--訂單頁結束 -->
+    <!--店家資訊 -->
+    <div data-role="page" id="shop" data-theme="c">
+        <!--map-->
+        <div data-role="content" id="divFmap">
+            <div id="googleMap"></div>
+        </div>
+        <!--nav-->
+        <div data-role="footer" data-position="fixed" data-theme="d">
+            <!--shop info-->
+            <div id="mapInfo"></div>
+            <ul data-role="listview">
+                <li id="address">地址</li>
+                <li id="tel">電話</li>
+                <li id="openHoure">營業時間</li>
+            </ul>
+            <br />
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#enterPage" data-icon="search" data-theme="b">首頁</a></li>
+                    <li><a href="#product" data-icon="bullets" data-theme="b" data-transition="slide">產品資訊</</li>
+          <li><a href="#shop" data-icon="clock" data-theme="c" data-transition="slide">店家資訊</a></li>
+                    <li><a href="#member" data-icon="bullets" data-theme="b" data-transition="slide">會員</a></li>
+                    <li><a href="#issue" data-icon="clock" data-theme="b" data-transition="slide">問題回報</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--Member Page -->
+    <div data-role="page" id="member">
+        <div data-role="footer" data-position="fixed" data-theme="a">       
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#enterPage" data-icon="search" data-theme="b">首頁</a></li>
+                    <li><a href="#product" data-icon="bullets" data-theme="b" data-transition="slide">產品資訊</a></li>
+                    <li><a href="#shop" data-icon="clock" data-theme="b" data-transition="slide">店家資訊</a></li>
+                    <li><a href="#member" data-icon="bullets" data-theme="c" data-transition="slide">會員</a></li>
+                    <li><a href="#issue" data-icon="clock" data-theme="b" data-transition="slide">問題回報</a></li>
+                </ul>
+            </div>
+        </div>
+        <div data-role="main" class="ui-content" id="enterPage">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <a href="#login" class="ui-btn ui-btn-inline ui-corner-all ui-shadow ui-icon-heart ui-btn-icon-left" data-transition="slide" id="btnlogin" data-theme="c">登入</a>
+            <a href="#signIn" class="ui-btn ui-btn-inline ui-corner-all ui-shadow ui-icon-heart ui-btn-icon-left" data-transition="slide" id="btnsingIn" data-theme="c">註冊</a>
+        </div>
+    </div>
+    <!--Member Login Page -->
+    <div data-role="page" id="login">
+        <div data-role="footer" data-position="fixed" data-theme="a">         
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#enterPage" data-icon="search" data-theme="b">首頁</a></li>
+                    <li><a href="#product" data-icon="bullets" data-theme="b" data-transition="slide">產品資訊</a></li>
+                    <li><a href="#shop" data-icon="clock" data-theme="b" data-transition="slide">店家資訊</a></li>
+                    <li><a href="#member" data-icon="bullets" data-theme="c" data-transition="slide">會員</a></li>
+                    <li><a href="#issue" data-icon="clock" data-theme="b" data-transition="slide">問題回報</a></li>
+                </ul>
+            </div>
+        </div>
+        <div data-role="main" class="ui-content" id="enterPage">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <form method="get" action="">
+                <div class="ui-field-contain">
+                    <label for="account">帳號:</label>
+                    <input type="text" name="account" id="account" class="ui-btn ui-btn-inline ui-corner-all ui-shadow ui-icon-heart ui-btn-icon-left">
+                    <label for="password">密碼:</label>
+                    <input type="password" name="password" id="password" class="ui-btn ui-btn-inline ui-corner-all ui-shadow ui-icon-heart ui-btn-icon-left">
+                </div>
+                <input type="submit" class="ui-btn ui-btn-inline ui-corner-all ui-shadow ui-icon-heart ui-btn-icon-left" data-transition="slide" data-inline="true" value="登入">
+                <a href="#member" class="ui-btn ui-btn-inline ui-corner-all ui-shadow ui-icon-heart ui-btn-icon-left" data-transition="slide" id="btnlogin" data-theme="c">回上頁</a>
+            </form>
+        </div>
+    </div>
+    <!--Member SingIn Page -->
+    <div data-role="page" id="signIn">
+        <div data-role="footer" data-position="fixed" data-theme="a">
+           
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#enterPage" data-icon="search" data-theme="b">首頁</a></li>
+                    <li><a href="#product" data-icon="bullets" data-theme="b" data-transition="slide">產品資訊</a></li>
+                    <li><a href="#shop" data-icon="clock" data-theme="b" data-transition="slide">店家資訊</a></li>
+                    <li><a href="#member" data-icon="bullets" data-theme="c" data-transition="slide">會員</a></li>
+                    <li><a href="#issue" data-icon="clock" data-theme="b" data-transition="slide">問題回報</a></li>
+                </ul>
+            </div>
+        </div>
+        <div data-role="main" class="ui-content" id="enterPage">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="ui-field-contain">
+                <form method="get" action="">
+                    <label for="account">帳號:</label>
+                    <input type="text" name="account" id="account" class="ui-btn ui-btn-inline ui-corner-all ui-shadow ui-icon-heart ui-btn-icon-left">
+                    <br>
+                    <label for="password">密碼:</label>
+                    <input type="password" name="password" id="password" class="ui-btn ui-btn-inline ui-corner-all ui-shadow ui-icon-heart ui-btn-icon-left">
+                    <br>
+                    <label for="password">確認密碼:</label>
+                    <input type="password" name="password" id="password" class="ui-btn ui-btn-inline ui-corner-all ui-shadow ui-icon-heart ui-btn-icon-left">
+                    <label for="name">姓名:</label>
+                    <input type="text" name="name" id="name" class="ui-btn ui-btn-inline ui-corner-all ui-shadow ui-icon-heart ui-btn-icon-left">
+                    <br>
+                    <label for="address">聯絡地址:</label>
+                    <input type="text" name="address" id="address" class="ui-btn ui-btn-inline ui-corner-all ui-shadow ui-icon-heart ui-btn-icon-left">
+                    <br>
+                    <label for="tel">電話:</label>
+                    <input type="tel" name="tel" id="tel" class="ui-btn ui-btn-inline ui-corner-all ui-shadow ui-icon-heart ui-btn-icon-left">
+                    <label for="verification" id=v erification>驗證碼:</label>
+                    <input type="text" name="verificationNum" id="verificationNum" class="ui-btn ui-btn-inline ui-corner-all ui-shadow ui-icon-heart ui-btn-icon-left" readonly>
+                    <br>
+                    <a href="#" class="ui-btn ui-btn-inline ui-corner-all ui-shadow ui-icon-heart ui-btn-icon-left" data-transition="slide" id="btnVerification" data-theme="c">驗證號碼</a>
+                    <input type="submit" class="ui-btn ui-btn-inline ui-corner-all ui-shadow ui-icon-heart ui-btn-icon-left" data-transition="slide" data-inline="true" value="註冊">
+                    <a href="#member" class="ui-btn ui-btn-inline ui-corner-all ui-shadow ui-icon-heart ui-btn-icon-left" data-transition="slide" id="btnlogin" data-theme="c">回上頁</a>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--Issue Page -->
+    <div data-role="page" id="issue">
+        <div data-role="footer" data-position="fixed" data-theme="a">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#enterPage" data-icon="search" data-theme="b">首頁</a></li>
+                    <li><a href="#product" data-icon="bullets" data-theme="b" data-transition="slide">產品資訊</a></li>
+                    <li><a href="#shop" data-icon="clock" data-theme="b" data-transition="slide">店家資訊</a></li>
+                    <li><a href="#member" data-icon="bullets" data-theme="b" data-transition="slide">會員</a></li>
+                    <li><a href="#issue" data-icon="clock" data-theme="c" data-transition="slide">問題回報</a></li>
+                </ul>
+            </div>
+        </div>
+        <div data-role="main" class="ui-content" id="enterPage">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="ui-field-contain">
+                <form method="get" action="">
+                    <label for="issueName">姓名:</label>
+                    <input type="text" name="issueName" id="issueName" class="ui-btn ui-btn-inline ui-corner-all ui-shadow ui-icon-heart ui-btn-icon-left">
+                    <label for="issueTel">連絡電話:</label>
+                    <input type="text" name="issueTel" id="issueTel" class="ui-btn ui-btn-inline ui-corner-all ui-shadow ui-icon-heart ui-btn-icon-left">
+                    <label for="issueContent">內容:</label>
+                    <textarea name="issueContent" class="ui-btn ui-btn-inline ui-corner-all ui-shadow ui-icon-heart ui-btn-icon-left"></textarea>
+                    <input type="submit" class="ui-btn ui-btn-inline ui-corner-all ui-shadow ui-icon-heart ui-btn-icon-left" data-transition="slide" data-inline="true" value="送出">
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDzWQYYtGASKg62h1h3eJ6iyUMYoOjYD9M"></script>
     <script src="js/product.js"></script>
+    <script src="js/shop.js"></script>
 </body>
-</html>
